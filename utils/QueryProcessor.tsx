@@ -19,21 +19,34 @@ export default function QueryProcessor(query: string): string {
     return "kdao";
   }
 
-  if (query.toLowerCase().includes("What is 16 plus 34?")) {
-    return "50";
+  if (query.toLowerCase().includes("plus")) { 
+    const parts = query.split(" ");
+    const num1 = parseInt(parts[2]);
+    const num2 = parseInt(parts[4]);
+    if (!isNaN(num1) && !isNaN(num2)) {
+      return (num1 + num2).toString();
+    }
   }
-
-  if (query.toLowerCase().includes("Which of the following numbers is the largest: 90, 94, 31?")) {
-    return "94";
-  }
+    
   
-  if (query.toLowerCase().includes("What is 73 plus 15?")) {
-    return "88";
-  }
-
-  if (query.toLowerCase().includes("Which of the following numbers is the largest: 61, 77, 2?")) {
-    return "77";
-  }
-
-  return "";
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    return "";
 }
