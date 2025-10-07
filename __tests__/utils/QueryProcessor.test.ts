@@ -33,4 +33,12 @@ describe("QueryProcessor", () => {
             "kdao"
           ));
     });
+
+    test('should return what is your name', () => {
+        const query = "What is your name?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "Edison"
+          ));
+    });
 });

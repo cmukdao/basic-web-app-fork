@@ -15,5 +15,9 @@ export default function QueryProcessor(query: string): string {
     return "kdao";
   }
 
+  if (query.toLowerCase().includes("What is your name")) {
+    return "Edison";
+  }
+
   return "";
 }
