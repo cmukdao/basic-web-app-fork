@@ -27,26 +27,28 @@ export default function QueryProcessor(query: string): string {
       return (num1 + num2).toString();
     }
   }
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+  if (query.toLowerCase().includes("minus")) {
+    const parts = query.split(" ");
+    const num1 = parseInt(parts[2]);
+    const num2 = parseInt(parts[4]);
+    if (!isNaN(num1) && !isNaN(num2)) {
+      return (num1 - num2).toString();
+    }
+  }
+
+  if (query.toLowerCase().includes("which of the following numbers is the largest:")) {
+    const parts = query.split(":");
+    if (parts.length > 1) {
+      const numbers = parts[1]
+        .split(",")
+        .map((num) => parseInt(num.trim()))
+        .filter((num) => !isNaN(num));
+      if (numbers.length > 0) {
+        return Math.max(...numbers).toString();
+      }
+    }
+  }
+
     return "";
 }
