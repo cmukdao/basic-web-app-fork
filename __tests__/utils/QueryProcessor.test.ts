@@ -41,4 +41,12 @@ describe("QueryProcessor", () => {
             "Edison"
           ));
     });
+
+    test('What is 16 plus 34?', () => {
+        const query = "What is 16 plus 34?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "50"
+          ));
+    });
 });
